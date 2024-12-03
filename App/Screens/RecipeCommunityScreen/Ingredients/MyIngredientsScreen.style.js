@@ -8,7 +8,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    padding: 10,
+  },
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+  },
+  title: {
+    fontSize: 19,
+    fontWeight: "bold",
+    color: "#2E2F33",
+  },
+  emptySpace: {
+    width: 24, // NavigateBefore와 크기 맞추기
   },
   profileCard: {
     marginVertical: 20,
@@ -19,15 +33,15 @@ const styles = StyleSheet.create({
   },
   profileText: {
     textAlign: "center",
-    fontSize: 17,
-    fontWeight: "600",
+    fontSize: 16,
+    fontWeight: "bold",
     color: "rgba(0, 0, 0, 0.8)",
     marginBottom: 14,
   },
   highlightText: {
     color: "#2D754E",
     fontSize: 18,
-    fontWeight: "600",
+    fontWeight: "bold",
   },
   cameraButton: {
     backgroundColor: "#F5F5F5",
@@ -41,6 +55,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
+    marginVertical: 10,
+    marginHorizontal: 10,
   },
   gridItem: {
     width: 120, // 사진 크기 고정
@@ -61,10 +77,10 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 5,
     right: 5,
-    backgroundColor: "red",
+    backgroundColor: "#767676",
     borderRadius: 15,
-    width: 30,
-    height: 30,
+    width: 20,
+    height: 20,
     justifyContent: "center",
     alignItems: "center",
   },

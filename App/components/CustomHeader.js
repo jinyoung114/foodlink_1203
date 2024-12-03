@@ -10,9 +10,9 @@ const CustomHeader = ({ title }) => {
 
   const getTitleStyle = () => {
     if (title.length >= 3) {
-      return [headerStyles.headerTitle, { left: '45%' }];
+      return [headerStyles.headerTitle, { left: '47%' }];
     }
-    return [headerStyles.headerTitle, { left: '50%' }];
+    return [headerStyles.headerTitle, { left: '52%' }];
   };
 
   const removeItem = (item) => {

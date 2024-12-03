@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity, SafeAreaView, ScrollView } from "react-native";
 import { styles } from "../../../styles/RecipeCommunity/MyRecipePost.style";
 import NavigateBefore from "../../../components/NavigateBefore"; // NavigateBefore 컴포넌트
-import MyRecipeList from "../Recipe/MyReipeList"; // MyRecipeList 컴포넌트 확인
+import MyRecipeList from "./MyRecipeList"; // MyRecipeList 컴포넌트 확인
 
 const MyRecipePost = ({ navigation }) => {
   return (

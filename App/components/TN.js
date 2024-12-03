@@ -1,16 +1,10 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import HomeScreen from "../Screens/HomeScreen";
-import MapScreen from "../Login/MapScreen";
-import MyScreenFrame from "../Screens/Myscreen/MyScreenFrame";
-import RecipeCommunityScreen from "../Screens/RecipeCommunityScreen/Page";
-import ChatScreen from "../Screens/ChatScreen/ChatScreen";
-import CustomHeader from "./CustomHeader";
-import MyRecipeList from "../Screens/RecipeCommunityScreen/Recipe/MyRecipeList";
 
 const Tab = createBottomTabNavigator();
 
+// 탭별 타이틀 및 아이콘 설정
 const TAB_TITLES = {
   홈: "홈",
   커뮤니티: "커뮤니티",
@@ -27,63 +21,60 @@ const ICONS = {
   "내 게시판": { focused: "clipboard", unfocused: "clipboard-outline" },
 };
 
-const TabNavigator = () => {
+const TN = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        headerShown: true,
+        // 탭 스타일 설정
+        headerShown: true, // 헤더 표시 여부
         tabBarIcon: ({ focused, color, size }) => {
           const iconName = focused
             ? ICONS[route.name]?.focused || "help-circle"
             : ICONS[route.name]?.unfocused || "help-circle-outline";
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "green",
-        tabBarInactiveTintColor: "gray",
+        tabBarActiveTintColor: "green", // 활성화 탭 색상
+        tabBarInactiveTintColor: "gray", // 비활성화 탭 색상
       })}
     >
-    
-    <Tab.Navigator>
-      <Tab.Screen name="MyRecipeList" component={MyRecipeList} />
-    </Tab.Navigator>
-  
+      {/* 각 탭 (화면 연결 없음) */}
       <Tab.Screen
         name="홈"
-        component={HomeScreen}
+        component={() => null} // 연결된 화면 없음
         options={{
-          header: () => <CustomHeader title="홈" />,
+          tabBarLabel: TAB_TITLES["홈"], // 탭 타이틀
         }}
       />
       <Tab.Screen
         name="커뮤니티"
-        component={RecipeCommunityScreen}
+        component={() => null}
         options={{
-          header: () => <CustomHeader title="커뮤니티" />,
+          tabBarLabel: TAB_TITLES["커뮤니티"],
         }}
       />
       <Tab.Screen
         name="동네 지도"
-        component={MapScreen}
+        component={() => null}
         options={{
-          header: () => <CustomHeader title="동네 지도" />,
+          tabBarLabel: TAB_TITLES["동네 지도"],
         }}
       />
       <Tab.Screen
         name="채팅"
-        component={ChatScreen}
+        component={() => null}
         options={{
-          header: () => <CustomHeader title="채팅" />,
+          tabBarLabel: TAB_TITLES["채팅"],
         }}
       />
       <Tab.Screen
         name="내 게시판"
-        component={MyScreenFrame}
+        component={() => null}
         options={{
-          header: () => <CustomHeader title="내 게시판" />,
+          tabBarLabel: TAB_TITLES["내 게시판"],
         }}
       />
     </Tab.Navigator>
   );
 };
 
-export default TabNavigator;
+export default TN;

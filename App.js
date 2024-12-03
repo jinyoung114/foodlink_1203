@@ -25,7 +25,7 @@ import MyIngredientsScreen from "./App/Screens/RecipeCommunityScreen/Ingredients
 import IngredientDetailScreen from "./App/Screens/RecipeCommunityScreen/Ingredients/IngredientDetailScreen";
 import RecipeDetailScreen from "./App/Screens/RecipeCommunityScreen/Ingredients/RecipeDerailScreen";
 import RecipePost from "./App/Screens/RecipeCommunityScreen/Recipe/RecipePost";
-import MyRecipeList from "./App/Screens/RecipeCommunityScreen/Recipe/MyReipeList";
+import MyRecipeList from "./App/Screens/RecipeCommunityScreen/Recipe/MyRecipeList";
 import CmPostList from "./App/Screens/RecipeCommunityScreen/Community/CmPostList";
 import CmPost from "./App/Screens/RecipeCommunityScreen/Community/CmPost";
 import MyCmPost from "./App/Screens/RecipeCommunityScreen/Community/MyCmPost";
@@ -34,6 +34,12 @@ import MyRecipePost from "./App/Screens/RecipeCommunityScreen/Recipe/MyRecipePos
 import AddCmPost from "./App/Screens/RecipeCommunityScreen/Community/AddCmPost";
 import Page from "./App/Screens/RecipeCommunityScreen/Page";
 import ModifyCmPost from "./App/Screens/RecipeCommunityScreen/Community/ModifyCmPost";
+import MyScreenFrame from "./App/Screens/Myscreen/MyScreenFrame";
+import ModifyRecipe from "./App/Screens/RecipeCommunityScreen/Recipe/ModifyRecipe";
+import CTH from "./App/components/CTH";
+import TN from "./App/components/TN";
+import MyFoodWrite from "./App/Screens/RecipeCommunityScreen/Ingredients/MyFoodWrite";
+
 
 const Stack = createStackNavigator();
 
@@ -69,6 +75,7 @@ export default function App() {
           <Stack.Screen name="MyPostModify" component={MyPostModify} />
           <Stack.Screen name="MyIngredientsScreen" component={MyIngredientsScreen} />
           <Stack.Screen name="IngredientDetailScreen" component={IngredientDetailScreen} />
+          <Stack.Screen name="RecipeDetailScreen" component={RecipeDetailScreen} />
           <Stack.Screen name="RecipePost" component={RecipePost} />
           <Stack.Screen name="MyRecipeList" component={MyRecipeList} />
           <Stack.Screen name="CmPost" component={CmPost} />
@@ -79,6 +86,12 @@ export default function App() {
           <Stack.Screen name="AddCmPost" component={AddCmPost} />
           <Stack.Screen name="Page" component={Page} />
           <Stack.Screen name="ModifyCmPost" component={ModifyCmPost} />
+          <Stack.Screen name="MyScreenFrame" component={MyScreenFrame} />
+          <Stack.Screen name="ModifyRecipe" component={ModifyRecipe} />
+          <Stack.Screen name="CTH" component={CTH} />
+          <Stack.Screen name="TN" component={TN} />
+          <Stack.Screen name="MyFoodWrite" component={MyFoodWrite} />
+          
           
       
       

@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
       backgroundColor: "#ffffff",
     },
     profileCard: {
-      marginVertical: 20,
+      marginVertical: 10,
       padding: 20,
       backgroundColor: "#fff",
       borderRadius: 10,
@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     },
     profileText: {
       textAlign: "center",
-      fontSize: 17,
+      fontSize: 16,
       fontFamily: "Inter-Bold",
       fontWeight: "600",
       color: "rgba(0, 0, 0, 0.8)",
@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
     },
     highlightText: {
       color: "#2D754E",
-      fontSize: 16,
+      fontSize: 17,
       fontFamily: "Inter-Bold",
       fontWeight: "600",
       lineHeight: 20,
@@ -63,7 +63,7 @@ export const styles = StyleSheet.create({
       marginHorizontal: 0,
       flexDirection: "row",
       flexWrap: "wrap",
-      paddingHorizontal: 1,       //내 핸드폰 기준 1, 진영4
+      paddingHorizontal: 8,       //내 핸드폰 기준 1, 진영8
       justifyContent: "flex-start",
     },
     gridItem: {

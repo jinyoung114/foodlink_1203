@@ -24,22 +24,34 @@ const MyIngredientsScreen = ({ navigation }) => {
         alert("사진 라이브러리 접근 권한이 필요합니다.");
         return;
       }
-
+  
       const result = await ImagePicker.launchImageLibraryAsync({
         mediaTypes: ImagePicker.MediaTypeOptions.Images,
         quality: 0.7,
       });
-
+  
       if (!result.canceled) {
+        const newImage = { id: Date.now().toString(), url: result.assets[0].uri };
+  
         // 로컬 상태에 추가
-        setImageUrls((prev) => [...prev, { id: Date.now().toString(), url: result.assets[0].uri }]);
-        Alert.alert("업로드 성공", "이미지가 성공적으로 추가되었습니다!");
+        setImageUrls((prev) => [...prev, newImage]);
+  
+        Alert.alert("업로드 성공", "이미지가 성공적으로 추가되었습니다!", [
+          {
+            text: "확인",
+            onPress: () => {
+              // MyFoodWrite 화면으로 이동하며 업로드한 이미지 전달
+              navigation.navigate("MyFoodWrite", { image: newImage });
+            },
+          },
+        ]);
       }
     } catch (error) {
       console.error("이미지 업로드 실패:", error);
       Alert.alert("오류", "이미지 업로드 중 문제가 발생했습니다.");
     }
   };
+  
 
   // 이미지 삭제
   const handleDeleteImage = (imageId) => {
@@ -67,8 +79,12 @@ const MyIngredientsScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        {/* 이전 화면으로 돌아가기 버튼 */}
-        <NavigateBefore onPress={() => navigation.goBack()} />
+        {/* 헤더 */}
+        <View style={styles.header}>
+          <NavigateBefore onPress={() => navigation.goBack()} /> {/* navigation 사용 */}
+          <Text style={styles.title}>내 레시피</Text>
+          <View style={styles.emptySpace} />
+        </View>
 
         {/* Profile Section */}
         <View style={styles.profileCard}>
